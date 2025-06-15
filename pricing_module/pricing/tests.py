@@ -15,5 +15,5 @@ class PriceCalculationTest(TestCase):
         }
         serializer = PriceInputSerializer(data=data)
         self.assertTrue(serializer.validate(data=data),"Serializer validation failed")
-        response = client.post("pricing/calculatePrice/",data=data, format='json')
+        response = client.post("/pricing/calculatePrice/", data=data, format='json')
         self.assertEqual(response.status_code, 200)
